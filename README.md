@@ -1,7 +1,7 @@
 # PerfectPhoneMask
 A JavaScript - jQuery function to perfectly mask phone inputs with 8 or 9 digits.
 
-Uma função em JavaScript e jQuery para formatar perfeitamente entradas de números de telefone com 8 ou 9 dígitos (fixo ou celular).
+<i>Uma função em JavaScript e jQuery para formatar perfeitamente entradas de números de telefone com 8 ou 9 dígitos (fixo ou celular).</i>
 
 This little piece of JS code runs with jQuery Mask Plugin by Igor Escobar, available at https://plugins.jquery.com/mask/
 
