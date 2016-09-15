@@ -1,0 +1,68 @@
+<!--
+PerfectPhoneMask by Dival Porto Lomba
+September, 15 2016
+-->
+
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Language" content="pt-br">
+
+		<title>PerfectPhoneMask</title>
+
+		<meta name="description" content="A JavaScript - jQuery function to perfectly mask phone inputs with 8 or 9 digits.">
+		<meta name="keywords" content="mask, input, phone, number, 8, 9, digits, JavaScript, jQuery, function, Perfect">
+		<meta name="author" content="Dival Porto Lomba">
+
+		<script src="_js/jquery-2.2.4.min.js"></script>
+		<script src="_js/jquery.mask.min.js"></script>
+
+		<style>
+			body {color:#28F407; background-color: #222; padding:10px 0 0 30px;}
+			input {font-size:20px; padding:8px;}
+		</style>
+
+	</head>
+
+	<body>
+
+		<h1>perfectPhoneMask</h1>
+		<h3>by Dival Porto Lomba</h3>
+
+		<br>
+		Please enter phone numbers below and see the perfect formatting, regardless if it has 8 or 9 digits.
+		<br><br>
+
+		<input id="phoneField" name="phone" type="tel" oninput="perfectPhoneMask(this)" size="16">
+		<br><br>
+		<input id="anotherPhoneField" name="phone" type="tel" oninput="perfectPhoneMask(this)" size="16">
+
+
+
+		<script type="text/javascript">
+
+			perfectPhoneMask = function(str) {
+
+				var masked = str.value;
+				var id = str.id;  // this var allows the function to work on any input element with an ID
+
+				console.log('Value: ' + masked + '\nElement Id: ' + id);  // for debug or study purposes
+
+				if(masked.length < 15) {  // adjust here for the total digits required (including non-numeric chars)
+					$('#'+id).mask("(00) 0000-00009");  // adjust the mask to your requirements
+				} else {
+					$('#'+id).mask("(00) 00000-0000");
+				};
+				document.getElementById(id).value = masked;
+			}
+
+		</script>
+
+	  
+	</body>
+
+</html>
