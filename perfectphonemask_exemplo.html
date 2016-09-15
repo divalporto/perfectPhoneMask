@@ -1,0 +1,71 @@
+<!--
+PerfectPhoneMask by Dival Porto Lomba
+15 de setembro de 2016
+-->
+
+<!doctype html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Language" content="pt-br">
+
+		<title>PerfectPhoneMask</title>
+
+		<meta name="description" content="A JavaScript - jQuery function to perfectly mask phone inputs with 8 or 9 digits.">
+		<meta name="keywords" content="mask, input, phone, number, 8, 9, digits, JavaScript, jQuery, function, Perfect">
+		<meta name="author" content="Dival Porto Lomba">
+
+		<script src="_js/jquery-2.2.4.min.js"></script>
+		<script src="_js/jquery.mask.min.js"></script>
+
+		<style>
+			body {color:#28F407; background-color: #222; padding:10px 0 0 30px; font-size:22px;}
+			input {font-size:20px; padding:8px;}
+			a {color:#28F407; text-decoration: none;}
+			a:visited {color:#28F407; text-decoration: none;}
+			a:hover {color:#CDFBC6; text-decoration: none;}
+		</style>
+
+	</head>
+
+	<body>
+
+		<h1 style="display: inline-block; margin:10px 337px 0 0;">perfectPhoneMask</h1><span><a href="perfectphonemask_sample.html">english</a> | português</span>
+		<h3>by Dival Porto Lomba</h3>
+
+		<br>
+		Digite números de telefone abaixo para ver o funcionamento, com 8 ou 9 dígitos.
+		<br><br>
+
+		<input id="phoneField" name="phone" type="tel" oninput="perfectPhoneMask(this)" size="16">
+		<br><br>
+		<input id="anotherPhoneField" name="phone" type="tel" oninput="perfectPhoneMask(this)" size="16">
+
+
+
+		<script type="text/javascript">
+
+			perfectPhoneMask = function(str) {
+
+				var masked = str.value;
+				var id = str.id;  // essa variável permite que a função aja em qualquer elemento que tenha uma ID
+
+				console.log('Value: ' + masked + '\nElement Id: ' + id);  // para debug ou estudo (pressione F12 no browser)
+
+				if(masked.length < 15) {  // ajuste esse número para o total de dígitos da máscara, incluindo espaços, hifens e parênteses
+					$('#'+id).mask("(00) 0000-00009");  // máscara para números de 8 dígitos
+				} else {
+					$('#'+id).mask("(00) 00000-0000");  // máscara para números de 9 dígitos
+				};
+				document.getElementById(id).value = masked;
+			}
+
+		</script>
+
+	  
+	</body>
+
+</html>
