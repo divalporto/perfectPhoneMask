@@ -59,8 +59,8 @@ PerfectPhoneMask by Dival Porto Lomba
 					$('#'+id).mask("(00) 0000-00009");  // máscara para números de 8 dígitos
 				} else {
 					$('#'+id).mask("(00) 00000-0000");  // máscara para números de 9 dígitos
-				};
-				document.getElementById(id).value = masked;
+				}
+				document.getElementById(id).value = masked;  // força o posicionamento correto do hifem
 			}
 
 		</script>
