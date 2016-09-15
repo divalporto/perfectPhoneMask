@@ -59,8 +59,8 @@ September, 15 2016
 					$('#'+id).mask("(00) 0000-00009");  // adjust the mask to your requirements
 				} else {
 					$('#'+id).mask("(00) 00000-0000");
-				};
-				document.getElementById(id).value = masked;
+				}
+				document.getElementById(id).value = masked;  // forces the correct placing of the hyphen
 			}
 
 		</script>
